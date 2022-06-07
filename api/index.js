@@ -1,16 +1,18 @@
 //funcionalidades de expres para levantar los proyectos
-const express = require('express');
+import express from 'express';
 
-const config = require('../config.js');
-const router = require('./components/user/network');
-const { route } = require('./components/user/network');
-const user = require('./components/user/network')
+import { api } from '../config.js';
+
+import user from './components/user/network.js';
 
 const app = express();
 
 //ROUTER
 app.use('/api/user', user);
 
-app.listen(config.api.port, () => {
-    console.log(`servidor corriendoe en el puerto: ${config.api.port}`)
+/*app.listen(api.port, () => {
+    console.log(`servidor corriendoe en el puerto: ${api.port}`)
+});*/
+app.listen(api.port, () => {
+    console.log(`servidor corriendoe en el puerto: ${api.port}`)
 })

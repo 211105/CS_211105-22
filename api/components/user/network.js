@@ -1,14 +1,13 @@
-const express = require('express');
-const response = require('../../../network/response');
-const { getConnection } = require('../../../model/db');
-const { user } = require('pg/lib/defaults');
-const { request } = require('express');
+import { Router } from 'express';
+import { success as _success } from '../../../network/response.js';
+import  getConnection  from '../../../model/db.js';
 
-const router = express.Router();
+
+const router = Router();
 
 
 router.get('/success', function (req, res) {
-    response.success(req, res, "", 200);
+    _success(req, res, "", 200);
 
 });
 
@@ -33,8 +32,8 @@ router.delete('/delete', async function (req, res) {
     };
 
     client.query(query_request)
-        .then(r => { console.log('1'); response.success(req, res, r, 200); })
-        .catch(e => { console.log('2'); response.success(req, res, e.stack, 400); })
+        .then(r => { console.log('1'); _success(req, res, r, 200); })
+        .catch(e => { console.log('2'); _success(req, res, e.stack, 400); })
 });
 
 router.put('/update', async function (req, res) {
@@ -52,8 +51,8 @@ router.put('/update', async function (req, res) {
     };
 
     client.query(query_request)
-        .then(r => { console.log('1'); response.success(req, res, r, 200); })
-        .catch(e => { console.log('2'); response.success(req, res, e.stack, 400); })
+        .then(r => { console.log('1'); _success(req, res, r, 200); })
+        .catch(e => { console.log('2'); _success(req, res, e.stack, 400); })
 });
 
 router.post('/register', async function (req, res) {
@@ -72,8 +71,8 @@ router.post('/register', async function (req, res) {
     };
 
     client.query(query_request)
-        .then(r => { console.log('1'); response.success(req, res, r, 200); })
-        .catch(e => { console.log('2'); response.success(req, res, e.stack, 200); })
+        .then(r => { console.log('1'); _success(req, res, r, 200); })
+        .catch(e => { console.log('2'); _success(req, res, e.stack, 200); })
 });
 
 router.post('/login', function (req, res) {
@@ -89,4 +88,4 @@ router.post('/login', function (req, res) {
 });
 
 
-module.exports = router;
+export default router;
