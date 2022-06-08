@@ -89,6 +89,8 @@ router.post('/login', function (req, res) {
 });
 
 //add Sequelize
+
+
 router.get('/all_user_orm' , async function(req, res){
     getUser.findAll({attributes: ['username', 'email', 'password', 'phone_number']})
     .then(users =>{
