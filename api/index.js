@@ -10,9 +10,7 @@ const app = express();
 //ROUTER
 app.use('/api/user', user);
 
-/*app.listen(api.port, () => {
-    console.log(`servidor corriendoe en el puerto: ${api.port}`)
-});*/
+
 app.listen(api.port, () => {
     console.log(`servidor corriendoe en el puerto: ${api.port}`)
 })

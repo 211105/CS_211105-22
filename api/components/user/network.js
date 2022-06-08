@@ -1,13 +1,14 @@
 import { Router } from 'express';
-import { success as _success } from '../../../network/response.js';
-import  getConnection  from '../../../model/db.js';
+import { success } from '../../../network/response.js'
+import { getData } from '../../../model/db.js';
+import { getUser } from '../../../model/user.js';
 
 
 const router = Router();
 
 
 router.get('/success', function (req, res) {
-    _success(req, res, "", 200);
+    success(req, res, "", 200);
 
 });
 
@@ -84,6 +85,17 @@ router.post('/login', function (req, res) {
         token: "",
         id_user: "1",
         success: "exito",
+    });
+});
+
+//add Sequelize
+router.get('/all_user_orm' , async function(req, res){
+    getUser.findAll({attributes: ['username', 'email', 'password', 'phone_number']})
+    .then(users =>{
+        res.send(users)
+    })
+    .catch(err=>{
+        console.log(err)
     });
 });
 
