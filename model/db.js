@@ -1,16 +1,31 @@
-const { Pool } = require('pg')
+import pkg from 'pg'
+import { Sequelize } from 'sequelize';
+const { Pool } = pkg;
+import { db } from '../config.js';
 
-const config = require('../config.js');
 
 async function getConnection() {
-    const pool = new Pool({
-        user: config.db.user,
-        host: config.db.host,
-        database: config.db.database,
-        password: config.db.password,
-        port: config.db.port,
+    const client = new Pool({
+        user: db.user,
+        host: db.host,
+        database: db.database,
+        password: db.password,
+        port: db.port,
     });
-    await pool.connect();
-    return pool;
-}
-module.exports = { getConnection };
+    await client.connect();
+    return client;
+};
+
+const SequelizeClient = new Sequelize(db.database, db.user, db.password, {
+    host: db.host,
+    dialect: 'postgres'
+});
+
+SequelizeClient.authenticate()
+    .then(() => {
+        console.log('conectado')
+    })
+    .catch(() => {
+        console.log('no se conecto')
+    });
+export const getData = { getConnection, SequelizeClient };

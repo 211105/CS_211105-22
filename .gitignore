@@ -1,0 +1,104 @@
+# Registros
+registros
+* .registro
+npm-debug.log *
+hilo-debug.log *
+hilo-error.log *
+lerna-debug.log *
+
+# Informes de diagnóstico (https://nodejs.org/api/report.html)
+reporte. [ 0-9 ] * . [ 0-9 ] * . [ 0-9 ] * . [ 0-9 ] * .json
+
+# datos de tiempo de ejecución
+pids
+* .pid
+* .semilla
+* .pid.bloqueo
+
+# Directorio para bibliotecas instrumentadas generadas por jscoverage/JSCover
+lib-cov
+
+# Directorio de cobertura utilizado por herramientas como estambul
+cobertura
+* .lcov
+
+# cobertura de prueba de Nueva York
+.nyc_salida
+
+# Almacenamiento intermedio de Grunt (https://gruntjs.com/creating-plugins#storing-task-files)
+.gruñido
+
+# Directorio de dependencias de Bower (https://bower.io/)
+Bower_components
+
+# configuración de nodo-waf
+.lock-wscript
+
+# Complementos binarios compilados (https://nodejs.org/api/addons.html)
+compilar / lanzar
+
+# directorios de dependencia
+node_modules /
+jspm_paquetes /
+
+# Archivos de declaración de TypeScript v1
+mecanografías /
+
+# Caché de mecanografiado
+* .tsbuildinfo
+
+# Directorio de caché npm opcional
+.npm
+
+# Caché eslint opcional
+.eslintcache
+
+# Caché de micropaquetes
+.rpt2_caché /
+.rts2_cache_cjs /
+.rts2_cache_es /
+.rts2_cache_umd /
+
+# Historial de REPL opcional
+.node_repl_history
+
+# Salida de 'paquete npm'
+* .tgz
+
+# Archivo de integridad del hilo
+.integridad del hilo
+
+# archivo de variables de entorno dotenv
+.env
+.env.test
+
+# caché del empaquetador de paquetes (https://parceljs.org/)
+.cache
+
+# Salida de compilación de Next.js
+.Siguiente
+
+# Nuxt.js construir/generar salida
+.nuxt
+dist
+
+# archivos Gatsby
+.caché /
+# Comenta en la línea pública si tu proyecto usa Gatsby y *no* Next.js
+# https://nextjs.org/blog/next-9-1#public-directory-support
+# público
+
+# salida de compilación de vuepress
+.vuepress / dist
+
+# directorios sin servidor
+.sin servidor /
+
+# Caché de FuseBox
+.caja de fusibles /
+
+# Archivos locales de DynamoDB
+.dynamodb /
+
+# archivo de puerto TernJS
+.tern-puerto
