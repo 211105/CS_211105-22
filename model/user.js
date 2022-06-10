@@ -7,7 +7,7 @@ const User = getData.SequelizeClient.define('tbl_usersdb', {
     username: Sequelize.STRING,
     email: Sequelize.STRING,
     password: Sequelize.STRING,
-    phone_number: Sequelize.STRING,
+    phone_number: Sequel
    
 },{
     tableName: 'tbl_usersdb',

@@ -64,6 +64,8 @@ router.post('/register_user_orm', async function (req, res) {
         });
 
 })
+
+
 router.delete('/delete_user_orm', async function (req, res) {
     let id = req.query.id;
     console.log("id:" + req.query.id);
@@ -77,6 +79,8 @@ router.delete('/delete_user_orm', async function (req, res) {
         })
         .catch((e) => {
             success(req, res, e, 200);
+
+
         });
 });
 
