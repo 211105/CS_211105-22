@@ -2,15 +2,16 @@ import { getData } from './db.js';
 import { Sequelize } from 'sequelize';
 
 
-
 const User = getData.SequelizeClient.define('tbl_usersdb', {
-    id: { type: Sequelize.SMALLINT, primaryKey: true },
+    id:{type: Sequelize.SMALLINT, primaryKey: true, autoIncrement: true },
     username: Sequelize.STRING,
     email: Sequelize.STRING,
     password: Sequelize.STRING,
-    phone_number: Sequelize.STRING,
-}, {
-    tableName: 'tbl_usersdb'
+    phone_number: Sequel
+   
+},{
+    tableName: 'tbl_usersdb',
+    createdAt: false,
+    updatedAt: false,
 });
-
 export const getUser = User;

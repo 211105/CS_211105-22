@@ -1,4 +1,3 @@
-//funcionalidades de expres para levantar los proyectos
 import express from 'express';
 
 import { api } from '../config.js';
@@ -11,6 +10,6 @@ const app = express();
 app.use('/api/user', user);
 
 
-app.listen(api.port, () => {
-    console.log(`servidor corriendoe en el puerto: ${api.port}`)
-})
+app.listen(api.port , () => {
+    console.log(`Servidor corriendo en el puerto => ${api.port}`);
+});

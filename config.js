@@ -1,6 +1,6 @@
 
 export const api = {
-    port: process.env.API_PORT || 3001,
+    port: process.env.API_PORT || 3000,
 };
 export const db = {
     user: 'postgres',
