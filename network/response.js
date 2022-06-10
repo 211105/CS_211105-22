@@ -6,6 +6,6 @@ export function success (req, res, message, status) {
     res.status(status).send({
         error,
         statusCode,
-        statusMessage,
+        statusMessage
     });
 }
